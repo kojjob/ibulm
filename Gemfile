@@ -19,6 +19,8 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'devise'
+gem 'paperclip'
+gem 'friendly_id', '~> 5.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
