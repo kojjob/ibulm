@@ -21,6 +21,7 @@ gem 'simple_form', '~> 3.3', '>= 3.3.1'
 gem 'devise'
 gem 'paperclip'
 gem 'friendly_id', '~> 5.1'
+gem 'masonry-rails', '~> 0.2.4'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
