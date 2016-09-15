@@ -1,18 +1,23 @@
-= simple_form_for@pic, html: { multipart: true } do |f|
-  - if @pic.errors.any?
-    #errors
-      %h2
-      = pluralize(@pic.errors.count, "errors")
-      prevented this from saving
-      %ul
-        - @pic.errors.full_message.each do |msg|
-          %li= msg
-
-  .form-group
-    = f.input  :image, input_html:  { class: 'form-control' }
-  .form-group
-    = f.input  :title, input_html:  { class: 'form-control' }
-  .form-group
-    = f.input  :description, input_html: { class: 'form-control' }
-
-  = f.button  :submit, class: 'btn btn-info'
+.posts-wrapper
+  .post
+    .post-body
+      .image-wrap
+        = simple_form_for@pic, html: { multipart: true } do |f|
+          - if @pic.errors.any?
+            #errors
+              %h2
+              = pluralize(@pic.errors.count, "errors")
+              prevented this from saving
+              %ul
+                - @pic.errors.full_message.each do |msg|
+                  %li= msg
+          .container-fluid
+            .form-group.text-center
+              %h4 Upload an image (this is required):
+              = f.input :image, label: false, input_html: { onChange: 'loadFile(event)' }
+            .form-group.text-center
+              = f.input :title, label: false, placeholder:'Add your caption'
+            .form-group.text-center
+              = f.input :description, label: false, placeholder:'Add your caption'
+            .form-group.text-center
+              = f.button :submit, class: 'btn-success btn-block'

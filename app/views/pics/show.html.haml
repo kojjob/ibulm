@@ -11,7 +11,7 @@
         .row
           .col-md-6
             %p.user
-              by
+              Posted by :
               =@pic.user.user_name
           .col-md-6
             .btn-gruop.pull-right
@@ -19,7 +19,11 @@
                 %span.glyphicon.glyphicon-thumbs-up
                 = @pic.get_upvotes.size
 
-              - if user_signed_in?      
-                = link_to "Edit", edit_pic_path, class:"btn btn-info"
-                = link_to "Delete", pic_path(@pic), method: :delete, date: {comfirm: "Are you sure ?" }, class: "btn btn-danger"
+              - if user_signed_in?  
+                - if @pic.user.id == current_user.id    
+                  = link_to "Edit", edit_pic_path, class:"btn btn-info"
+                  = link_to "Delete", pic_path(@pic), method: :delete, date: {comfirm: "Are you sure ?" }, class: "btn btn-danger"
+              / - else
+              /   .text-center
+              /     =link_to "Cancel", pics_path
 

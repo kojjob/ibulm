@@ -1,0 +1,38 @@
+
+.registration-bg {
+  height: 100%;
+  padding-top: 4em;
+  background-image: image-url('regbackg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100%;
+}
+.log-in{
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
+  border: none;
+}
+.panel {
+  border-radius: 8px;
+}
+.panel-heading{
+  h1 {
+    text-align: center;
+  }
+}
+
+// -------------------------------------------------
+//               log-in
+// -------------------------------------------------
+
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('loginbg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

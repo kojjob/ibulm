@@ -1,6 +1,7 @@
 class PicsController < ApplicationController
   before_action :find_pic, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :owned_pic, only: [:edit, :update, :destroy]
 
   def index
     @pics = Pic.all.order("created_at DESC")
@@ -51,6 +52,13 @@ class PicsController < ApplicationController
 
   def find_pic
     @pic = Pic.friendly.find(params[:id]) 
+  end
+
+  def owned_pic
+    unless current_user == @pic.user
+      flash[:alert] = "That picture doesn't belong to you!"
+      redirect_to root_path
+    end 
   end
     
 end
