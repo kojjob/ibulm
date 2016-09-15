@@ -12,7 +12,7 @@
           .col-md-6
             %p.user
               by
-              =@pic.user.email
+              =@pic.user.user_name
           .col-md-6
             .btn-gruop.pull-right
               = link_to like_pic_path(@pic), method: :put, class: "btn btn-default" do
